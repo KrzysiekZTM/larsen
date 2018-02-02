@@ -1,0 +1,19 @@
+nav{
+	@include padding-top-bottom(20px, 80px);
+	@include flexbox();
+	@include align-items(center);
+	@include justify-content(space-between);
+	ul{
+		list-style:none;
+		padding:0;
+	}
+	ul li{
+		display: inline-block;
+		padding: 0 20px;
+	}
+
+	ul li.active a{
+		color: $mediumGrey;
+	}
+
+}

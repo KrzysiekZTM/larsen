@@ -1,0 +1,82 @@
+@each $align in $aligns{
+	.align-#{$align}{
+		text-align: #{$align}
+	}
+}
+
+
+@mixin font($font,$weight){
+	font-family:$font;
+	font-weight:$weight
+}
+
+.white-text{
+	color:$white;
+}
+
+
+body{
+	@include font($textFont, 400);
+	font-size:18px;
+	line-height:1.3;
+	color:$mediumGrey;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo{
+	@include font($headingFont, 700);
+	color:$black;
+}
+
+h2{
+	font-size: 4em;
+	@include marign-top-bottom(40px, 30px);
+	@media screen and (min-width: $bLarge){
+		font-size:5em;
+	}
+	@media screen and (min-width: $bXLarge){
+		font-size: 6em;
+	}
+}
+
+h3{
+	font-size: 2.8em;
+	@media screen and (min-width: $bLarge){
+		font-size: 3em;
+	}
+	@media screen and (min-width: $bXLarge){
+		font-size: 4.5em;
+	}
+}
+
+
+.logo{
+	font-size: 28px;
+}
+
+.subtitle{
+	margin:0 auto;
+	display: block;
+	@include marign-top-bottom(0, 30px);
+		@media screen and (min-width: $bMedium){
+		@include marign-top-bottom(0, 30px);
+	}
+		@media screen and (min-width: $bLarge){
+		@include marign-top-bottom(0, 50px);
+	}
+
+	@media screen and (min-width: $bXLarge){
+		@include marign-top-bottom(0, 100px);
+	}
+}
+
+
+a{
+	text-decoration: none;
+	color: $black;
+}

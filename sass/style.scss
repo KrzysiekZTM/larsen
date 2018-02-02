@@ -1,0 +1,143 @@
+@import 'vars';
+@import 'flex';
+@import 'colours';
+@import 'mixins';
+@import 'typo';
+@import 'nav';
+@import 'work';
+
+
+body{
+    background-color: $lightGrey;
+    overflow-x: hidden;
+}
+
+.wrapper{
+	width: 95%;
+	max-width: 1660px;
+	margin: 0 auto;
+}
+
+.centerObject{
+	display:block;
+	margin: 0 auto;
+}
+
+
+//Homepage sections
+
+.full-section{
+	@media screen and (min-width: $bXSmall){
+		@include padding-top-bottom(20px, 20px);
+
+	}
+	@media screen and (min-width: $bSmall){
+		@include padding-top-bottom(40px, 40px);
+	}
+	@media screen and (min-width: $bXLarge){
+		@include padding-top-bottom(60px, 60px);
+	}
+}
+
+
+.first-section{
+
+	position: relative;
+		@include padding-top-bottom(40px, 40px);
+
+	@media screen and (min-width: $bSmall){
+		@include padding-top-bottom(60px, 60px);
+	}
+
+	@media screen and (min-width: $bLarge){
+		@include padding-top-bottom(80px, 80px);
+	}
+
+
+	@media screen and (min-width: $bXLarge){
+		@include padding-top-bottom(160px, 160px);
+	}
+
+}
+
+section:last-of-type{
+	@media screen and (min-width: $bXSmall){
+		@include padding-top-bottom(0, 20px);
+
+	}
+	@media screen and (min-width: $bSmall){
+		@include padding-top-bottom(0, 40px);
+	}
+	@media screen and (min-width: $bXLarge){
+		@include padding-top-bottom(0, 60px);
+	}
+}
+
+
+//Flex support classes
+
+.flex{
+	@include flexbox();
+}
+
+.flex-wrap{
+	@include flex-wrap(wrap);
+}
+
+.flex-column{
+	@include flex-direction(column);
+}
+
+.flex-jc-sb{
+	@include justify-content (space-between);
+}
+
+
+//BG colour classses
+
+.whiteBG{
+	background-color: $white;
+}
+
+.darkBG{
+	background-color: $darkGrey;
+	color: $white;
+}
+
+// Footer classses
+
+footer{
+	padding: 120px 0;
+	position: relative;
+	h3{
+		color:$white;
+		@include marign-top-bottom(0,70px);
+		a{
+			color: $white;
+			text-decoration: underline;
+		}
+	}
+}
+
+.copy{
+	font-size: .8em;
+	span{
+		float:right;
+		a{
+			text-decoration: underline;
+		}
+	}
+	ul{
+		list-style:none;
+		padding:0;
+	}
+	ul li{
+		display: inline-block;
+		padding-right: 10px;
+	}
+
+	ul li a{
+		text-decoration: underline;
+	}
+
+}
