@@ -3,6 +3,7 @@ nav{
 	@include flexbox();
 	@include align-items(center);
 	@include justify-content(space-between);
+	background-color: $lightGrey;
 	ul{
 		list-style:none;
 		padding:0;

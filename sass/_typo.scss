@@ -27,13 +27,12 @@ h2,
 h3,
 h4,
 h5,
-h6,
-.logo{
+h6{
 	@include font($headingFont, 700);
 	color:$black;
 }
 
-h2{
+h1, h2{
 	font-size: 4em;
 	@include marign-top-bottom(40px, 30px);
 	@media screen and (min-width: $bLarge){
@@ -41,6 +40,15 @@ h2{
 	}
 	@media screen and (min-width: $bXLarge){
 		font-size: 6em;
+	}
+}
+
+h2{
+	@media screen and (min-width: $bMedium){
+		margin-bottom: 30px;
+	}
+		@media screen and (min-width: $bLarge){
+		margin-bottom: 90px;
 	}
 }
 
@@ -56,7 +64,14 @@ h3{
 
 
 .logo{
+	@include font($logoFont, 700);
+	color:$black;
 	font-size: 28px;
+}
+
+.logo-motto{
+	@include font($logoFont, 400);
+	color: $mediumGrey;
 }
 
 .subtitle{
@@ -65,9 +80,11 @@ h3{
 	@include marign-top-bottom(0, 30px);
 		@media screen and (min-width: $bMedium){
 		@include marign-top-bottom(0, 30px);
+		width: 70%;
 	}
 		@media screen and (min-width: $bLarge){
 		@include marign-top-bottom(0, 50px);
+		width: 530px;
 	}
 
 	@media screen and (min-width: $bXLarge){
@@ -75,8 +92,52 @@ h3{
 	}
 }
 
+.primary-text{
+	margin: 0 auto;
+	display: block;
+	width: 80%;
+	@media screen and(min-width: $bMedium){
+		width: 70%;
+	}
+	@media screen and(min-width: $bLarge){
+		width: 530px;
+	}
+
+}
+
 
 a{
 	text-decoration: none;
 	color: $black;
+}
+
+.list-wrapper{
+		@include flexbox();
+		@include justify-content (center);
+		@include flex-wrap(wrap);
+	ul{
+		display: inline-block;
+		color: $mediumGrey;
+		list-style:none;
+		margin-right: 40px;
+		padding:0;
+		@media screen and (min-width: $bMedium){
+			margin-right: 80px;
+		}
+		@media screen and (min-width: $bLarge){
+			margin-right: 130px;
+		}
+		&:last-child{
+			margin-right: 0;
+		}
+		li{
+			&:before{
+				content: "\25CF";
+	   			font-size: 50%;
+	   			padding-right: 10px;
+			}
+
+		}
+	}
+
 }

@@ -16,6 +16,8 @@ body{
 	width: 95%;
 	max-width: 1660px;
 	margin: 0 auto;
+	background-color: $white;
+
 }
 
 .centerObject{
@@ -39,6 +41,11 @@ body{
 	}
 }
 
+.half-section{
+	@include flexbox();
+	@include justify-content (flex-start);
+}
+
 
 .first-section{
 
@@ -60,18 +67,40 @@ body{
 
 }
 
-section:last-of-type{
-	@media screen and (min-width: $bXSmall){
-		@include padding-top-bottom(0, 20px);
+.duble-images-row{
+	@include flexbox();
+	@include justify-content (center);
+	@include flex-wrap(wrap);
+	@media screen and (min-width: $bLarge){
+		@include flex-wrap(nowrap);
+		img{
 
+			&:first-child{
+				margin-right: 28px;
+			}
+			&:last-child{
+				margin-left: 28px;
+			}
+		
+		}
+	
 	}
-	@media screen and (min-width: $bSmall){
-		@include padding-top-bottom(0, 40px);
-	}
-	@media screen and (min-width: $bXLarge){
-		@include padding-top-bottom(0, 60px);
-	}
+
+	
 }
+
+// section:last-of-type{
+// 	@media screen and (min-width: $bXSmall){
+// 		@include padding-top-bottom(0, 20px);
+
+// 	}
+// 	@media screen and (min-width: $bSmall){
+// 		@include padding-top-bottom(0, 40px);
+// 	}
+// 	@media screen and (min-width: $bXLarge){
+// 		@include padding-top-bottom(0, 60px);
+// 	}
+// }
 
 
 //Flex support classes
@@ -92,6 +121,18 @@ section:last-of-type{
 	@include justify-content (space-between);
 }
 
+.flex-vert-center{
+	@include justify-content (center);
+}
+
+
+//Responsive img
+.img-responsive{
+	display:block;
+	width: 100%;
+	object-fit:contain;
+}
+
 
 //BG colour classses
 
@@ -108,6 +149,7 @@ section:last-of-type{
 
 footer{
 	padding: 120px 0;
+	margin-top: 120px;
 	position: relative;
 	h3{
 		color:$white;
@@ -120,6 +162,10 @@ footer{
 }
 
 .copy{
+
+	padding-top: 90px;
+
+	background-color: $lightGrey;
 	font-size: .8em;
 	span{
 		float:right;

@@ -1,36 +1,45 @@
-.first-col{
-	@media screen and (min-width: $bXSmall){
-		margin-right: 20px;
-	}
+.half-section{
+	.col{
+		width: 50%;
+		&:first-child{
+			.work{
+				img{
+					width: 100%
+				}
+			}
 
-	@media screen and (min-width: $bSmall){
-		margin-right: 40px;
-	}
+			@media screen and (min-width: $bXSmall){
+				margin-right: 20px;
+			}
 
-	@media screen and (min-width: $bLarge){
-		margin-right: 60px;
+			@media screen and (min-width: $bSmall){
+				margin-right: 40px;
+			}
+
+			@media screen and (min-width: $bLarge){
+				margin-right: 60px;
+			}
+		}
+		&:last-child{
+			.work{
+				img{
+					width: 108%;
+				}
+			}
+		}
 	}
 }
 
-.second-col{
+.full-section{
 	.work{
-		width: 108%;
+		img{
+			width: 100%
+		}
 	}
-}
-
-.first-col, .second-col{
-	@include justify-content (space-between);
-	width: 50%;
 }
 
 .work{
-	width: 100%;
-	position:relative;
-	img{
-		display:block;
-		width:100%;
-		object-fit:cover;
-	}
+	position: relative;
 }
 
 .work-over{
@@ -49,4 +58,10 @@
 	.work-over-text{
 		padding: 80px;
 	}
+}
+
+.col-flex{
+	@include flexbox();
+	@include flex-direction(column);
+	@include justify-content (space-between);
 }
