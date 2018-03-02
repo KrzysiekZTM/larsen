@@ -76,7 +76,7 @@ body{
 	@include flex-wrap(wrap);
 	@media screen and (min-width: $bLarge){
 		@include flex-wrap(nowrap);
-		img{
+		*{
 
 			&:first-child{
 				margin-right: 28px;
@@ -91,19 +91,6 @@ body{
 
 	
 }
-
-// section:last-of-type{
-// 	@media screen and (min-width: $bXSmall){
-// 		@include padding-top-bottom(0, 20px);
-
-// 	}
-// 	@media screen and (min-width: $bSmall){
-// 		@include padding-top-bottom(0, 40px);
-// 	}
-// 	@media screen and (min-width: $bXLarge){
-// 		@include padding-top-bottom(0, 60px);
-// 	}
-// }
 
 
 //Flex support classes
@@ -197,4 +184,30 @@ footer{
 		text-decoration: underline;
 	}
 
+}
+
+//Contact
+
+.contact-info-wrapper{
+	@include flexbox();
+	@include justify-content (space-between);
+	@include flex-wrap(wrap);
+	width: 80%;
+	margin: 0 auto;
+	color: $mediumGrey;
+	padding-bottom: 90px;
+	ul{
+		font-size: 1.1em;
+		line-height: 1.7em;
+		padding: 30px 0px;
+		display:block;
+		min-width: 325px;
+		li{
+			display:block;
+		}
+	}
+
+	a{
+		color: $black;
+	}
 }

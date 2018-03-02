@@ -56,7 +56,12 @@ $nav = array(
     array('Language','#'),
 );
 
-$footerEmail = "Give us a call <br>or send us an <a href=\"mailto:contact@larsenjorgensen.com\">email.";
+$footerEmail = "Give us a call <br>or send us an <a href=\"mailto:contact@larsenjorgensen.com\">email.</a>";
+
+
+$newsTitle = "News<br><span class=\"header-thiner\">and</span> Notes";
+
+$newsDsc = "We believe that design should solve real problems, not just have a pretty surface. Read about our thoughts on design here.";
 
 ?>
 

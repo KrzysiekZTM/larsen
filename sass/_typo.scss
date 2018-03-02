@@ -77,6 +77,10 @@ h3{
 	color: $mediumGrey;
 }
 
+.header-thiner{
+	font-weight: 400;
+}
+
 .subtitle{
 	margin:0 auto;
 	display: block;
@@ -143,4 +147,9 @@ a{
 		}
 	}
 
+}
+
+.contact-info{
+	display: inline-block;
+	list-style:none;
 }
