@@ -1,52 +1,12 @@
-<!doctype html>
-
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-
-        <title>larsen & Jorgensen</title>
-        <meta name="description" content="meta-opis idzie tutja">
-        <meta name="Zostaw To Nam" content="SitePoint">
-
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-        <link rel="stylesheet" href="fonts/fontface.css">
-        <link rel="stylesheet" href="css/style.css">
-
-        <!--[if lt IE 9]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-        <![endif]-->
-    </head>
-
-<body>
-
-
-<div class="wrapper">
-    <!-- Nav -->
-
-        <nav>
-            <span class="logo">Larsem + Jorgensen</span>
-            <ul>
-                <li class="active"><a href="index.html">Work</a></li>
-                <li><a href="studio.html">Studio</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Language</a></li>
-            </ul>
-        </nav>
-
-    <!-- /Nav -->
-
-
-
-
+<?php include "inc/defHeader.php" ?>
 
     <!-- 1st section -->
 
 
     <section class="first-section whiteBG">
         <img class="centerObject" src="img/logo-light-grey.png" alt="larsen+Jorgensen Logo">
-        <h1 class="align-center">We simplify<br>the message.</h1>
-        <span class="subtitle align-center">See some of our latest projects below.</span>
+        <h1 class="align-center"><?php echo $motto; ?></h1>
+        <span class="subtitle align-center"><?php echo $projects; ?></span>
         <img class="centerObject" src="img/downarrrow.svg" alt="larsen+Jorgensen Logo">
     </section>
 
@@ -175,29 +135,4 @@
 
 
 
-    <!-- Footer -->
-    <footer class="darkBG">
-        <h3 class="align-center">Give us a call <br>or send us an <a href="mailto:contact@larsenjorgensen.com">email.</a></h3>
-        <img class="centerObject" src="img/logo-white.png" alt="larsen+Jorgensen Logo">
-    </footer>
-    <div class="copy">
-        <p>© 2018 Larsen+Jørgensen. All rights reserved. Cookie policy. <span><a href="#">Careers</a></span></p>
-        <ul>
-            <li><a href="">Facebook</a></li>
-            <li><a href="">Instagram</a></li>
-            <li><a href="">Twitter</a></li>
-        </ul>
-
-    </div>
-    <!-- /Footer -->
-
-</div>
-        
-        
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="js/scripts.js"></script>
-
-</body>
-</html>
+  <?php include 'inc/defFooter.php' ?>

@@ -42,8 +42,11 @@ body{
 }
 
 .half-section{
-	@include flexbox();
-	@include justify-content (flex-start);
+	@media screen and (min-width: $bSmall){
+		@include flexbox();
+		@include justify-content (flex-start);
+	}
+
 }
 
 
@@ -130,7 +133,11 @@ body{
 .img-responsive{
 	display:block;
 	width: 100%;
-	object-fit:contain;
+	height: 50%;
+	object-fit:cover;
+	@media screen and (max-width: $bLarge){
+		@include marign-top-bottom(20px,10px);
+	}
 }
 
 
@@ -169,6 +176,10 @@ footer{
 	font-size: .8em;
 	span{
 		float:right;
+		@media screen and (max-width:$bXSmall){
+			float: initial !important;
+			display: block;
+		}
 		a{
 			text-decoration: underline;
 		}

@@ -33,8 +33,11 @@ h6{
 }
 
 h1, h2{
-	font-size: 4em;
+	font-size: 2.5em;
 	@include marign-top-bottom(40px, 30px);
+	@media screen and (min-width: $bSmall){
+		font-size: 4em;
+	}
 	@media screen and (min-width: $bLarge){
 		font-size:5em;
 	}

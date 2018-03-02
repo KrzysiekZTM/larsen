@@ -1,6 +1,9 @@
 .half-section{
 	.col{
-		width: 50%;
+		width: 100%;
+		@media screen and (min-width: $bSmall){
+			width: 50%;
+		}
 		&:first-child{
 			.work{
 				img{
@@ -23,7 +26,11 @@
 		&:last-child{
 			.work{
 				img{
-					width: 108%;
+					width: 100%;
+					@media screen and (min-width: $bSmall){
+						width: 108%;
+					}
+					
 				}
 			}
 		}
