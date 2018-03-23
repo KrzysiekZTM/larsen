@@ -187,7 +187,8 @@ nav {
   -ms-flex-pack: space-between; }
 
 nav {
-  background-color: #f1f0f0; }
+  background-color: #f1f0f0;
+  z-index: 999; }
   nav ul {
     list-style: none;
     padding: 0; }
@@ -249,11 +250,31 @@ nav {
       transition: .2s transform linear; }
   nav .mobile-list {
     display: none;
-    width: 100%; }
+    width: 100%;
+    z-index: 1000;
+    background-color: #f1f0f0; }
     nav .mobile-list .mobile-item {
+      font-family: "Bona Title";
+      font-weight: 700;
+      font-size: 2.5em;
       width: 100%;
       padding-top: 25px;
       padding-bottom: 25px; }
+  nav .mobile-languages {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: space-between;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center; }
   nav i {
     border: solid #000000;
     border-width: 0 2px 2px 0;
@@ -288,6 +309,41 @@ nav {
     -moz-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     transform: translate(0, 0); } }
+.language-menu {
+  position: relative; }
+  .language-menu ul {
+    z-index: 1000;
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1); }
+    .language-menu ul .language-item {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: space-between;
+      -moz-justify-content: space-between;
+      -ms-justify-content: space-between;
+      justify-content: space-between;
+      -ms-flex-pack: space-between;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      align-items: center;
+      font-size: 0.6em;
+      padding: 20px;
+      border-bottom: solid 1px #f1f0f0; }
+      .language-menu ul .language-item .language-img {
+        display: block; }
+      .language-menu ul .language-item span {
+        display: block; }
+
 @media screen and (min-width: 768px) {
   .row {
     margin-left: -15px;
@@ -346,14 +402,12 @@ nav {
     color: #ffffff; }
 
 .work-overlay {
-  display: none;
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
-  height: 100%;
   background-color: rgba(0, 0, 0, 0.67);
   transition: all .3s linear;
   color: #ffffff; }

@@ -2,6 +2,28 @@
 
 
 $languageShort = "en";
+$languages = array(
+    array(
+        'name' => 'English',
+        'img' => 'uk-flag'
+    ),
+    array(
+        'name' => 'Germany',
+        'img' => 'germany-flag'
+    ),
+    array(
+        'name' => 'Norwegian',
+        'img' => 'norway-flag'
+    ),
+    array(
+        'name' => 'Japanese',
+        'img' => 'japan-flag'
+    ),
+    array(
+        'name' => 'Mandarin',
+        'img' => 'china-flag'
+    ),
+);
 $author = "Larsen+Jørgensen";
 $title = "Larsen+Jørgensen";
 $description = "Description";

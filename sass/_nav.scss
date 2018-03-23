@@ -13,6 +13,7 @@
 nav {
   @extend %nav;
   background-color: $lightGrey;
+  z-index: 999;
 
   ul {
     @media screen and (max-width: $bMedium) {
@@ -87,10 +88,20 @@ nav {
   .mobile-list {
     display: none;
     width: 100%;
+    z-index:1000;
+    background-color: $lightGrey;
     .mobile-item {
+      @include font($headingFont, 700);
+      font-size: 2.5em;
       width: 100%;
       @include padding-top-bottom(25px, 25px);
     }
+  }
+
+  .mobile-languages{
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
   }
 
   //Arrow Icon
@@ -129,4 +140,38 @@ nav {
   to{
     @include translate(0, 0)
   }
+}
+
+//dropdown
+.language-menu{
+  position: relative;
+  ul{
+    z-index: 1000;
+    display: none;
+    position: absolute;
+    right:0;
+    width: 100%;
+    background-color: white;
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.1);
+    .language-item {
+      @include flexbox;
+      @include justify-content(space-between);
+      @include align-items(center);
+      font-size: 0.6em;
+      padding: 20px;
+      border-bottom: solid 1px $lightGrey;
+
+      .language-img{
+        display: block;
+      }
+      span{
+        display: block;
+      }
+    }
+
+
+  }
+
 }

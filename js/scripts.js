@@ -3,8 +3,11 @@ var $nav = $('nav');
 var $wrapper = $('.wrapper');
 var $wrapperWidth = $wrapper.width();
 var $navHeight = $nav.outerHeight();
+var $languageMenu = $('.language-menu');
+var $logo = $('.logo').html();
+var $work = $('.work');
 
-
+//nav resize
 $(window).bind('resize load', function(){
     $wrapperWidth = $wrapper.width();
     $navHeight = $nav.outerHeight();
@@ -12,28 +15,13 @@ $(window).bind('resize load', function(){
     $('.nav-container').css('maxWidth', $wrapperWidth);
 });
 
-
-
-
-$('.work').hover(
-	function(){
-		$('.work-overlay', this).fadeIn(400);
-	},
-	function(){
-		$('.work-overlay', this).fadeOut(400);
-	}
-
-)
-
+//open mobile nav
 $('.menu-trigger').click(function(){
 	$(this).toggleClass('menu-trigger-active');
 	$('.mobile-list').slideToggle();
 });
 
-
-
-
-
+//navigation scroll effect
 $(window).scroll(function(){
     if(!$nav.hasClass('fixed-nav')){
         if($(window).scrollTop()>500){
@@ -43,8 +31,23 @@ $(window).scroll(function(){
     }else{
         if($(window).scrollTop()<500){
             $nav.removeClass('fixed-nav');
+            $('.logo').html($logo);
         }
     }
-
-
 });
+
+//show language choise on desktop
+$languageMenu.hover(function(){
+    $('ul', this).slideToggle(400);
+});
+
+
+//work ovelay show
+
+$('.work-overlay').hover(function(){
+    $(this).css('opacity', 1);
+}, function(){
+    $(this).css('opacity', 0);
+});
+
+

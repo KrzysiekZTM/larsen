@@ -19,12 +19,15 @@
                     if(strtolower($navItem[0]) == strtolower($page)){
                         echo '<li class="active"><a href="'.$navItem[1].'">' . $navItem[0] . '</a></li>';
                     }elseif(strtolower($navItem[0]) == strtolower('language')){
-                        echo '<li><a href="'.$navItem[1].'">' . $navItem[0] . '<i class="down"></i></a></li>';
+                        echo '<li class="language-menu"><a href="'.$navItem[1].'">' . $navItem[0] . '<i class="down"></i></a><ul>';
+                        echo displayLanguages($languages);
+                        echo '</ul></li>';
                     }else{
                         echo '<li><a href="'.$navItem[1].'">' . $navItem[0] . '</a></li>';
                     }
 
                 }
+
 
                 ?>
 
@@ -33,8 +36,11 @@
             <div class="mobile-list">
                 <?php
                 foreach($nav as $navItem){
-                    echo '<div class="mobile-item align-center"><a href="'.$navItem[1].'">' . $navItem[0] . '</a></div>';
+                    echo '<div class="mobile-item align-left"><a href="' . $navItem[1] . '">' . $navItem[0] . '</a></div>';
                 }
+                echo "<div class='mobile-languages'>";
+                echo displayMobileLanguages($languages);
+                echo"</div>";
                 ?>
             </div>
         </div>

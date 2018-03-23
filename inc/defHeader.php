@@ -1,4 +1,8 @@
-<?php include('inc/data.php'); ?>
+<?php
+include('inc/data.php');
+include('functions.php');
+
+?>
 
 <!doctype html>
 
