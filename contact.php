@@ -1,5 +1,9 @@
-<?php include "inc/defHeader.php" ?>
-<?php include "inc/contact-info.php" ?>
+<?php
+
+$page = 'Contact';
+
+include "inc/defHeader.php";
+include "inc/contact-info.php" ?>
 
 <!-- 1st section -->
 

@@ -1,20 +1,132 @@
-nav{
+%nav{
 	@include padding-top-bottom(20px, 80px);
-	@include flexbox();
-	@include align-items(center);
-	@include justify-content(space-between);
 	background-color: $lightGrey;
-	ul{
-		list-style:none;
-		padding:0;
-	}
-	ul li{
-		display: inline-block;
-		padding: 0 20px;
-	}
+}
 
-	ul li.active a{
-		color: $mediumGrey;
-	}
+.nav-container{
+  @include flexbox();
+  @include align-items(center);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+}
 
+nav {
+  @extend %nav;
+  background-color: $lightGrey;
+
+  ul {
+    @media screen and (max-width: $bMedium) {
+      display: none !important;
+    }
+    list-style: none;
+    padding: 0;
+  }
+  ul li {
+    display: inline-block;
+    padding: 0 20px;
+
+  }
+  ul li a, i {
+    transition: .4s all;
+  }
+
+  ul li:hover {
+    a {
+      color: $mediumGrey;
+    }
+    i {
+      border-color: $mediumGrey;
+    }
+
+  }
+
+  ul li.active a {
+    color: $mediumGrey;
+  }
+
+  .menu-trigger {
+    @media screen and (min-width: $bMedium) {
+      display: none !important;
+    }
+    width: 30px;
+    height: 19px;
+    border: 0;
+    border-top: 3px solid $darkGrey;
+    background: transparent;
+    position: relative;
+    transition: .2s transform linear;
+
+    &::before, &::after {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-top: 3px solid black;
+      @include translate(0, 5px);
+      transition: .2s transform linear;
+    }
+
+    &::after {
+      @include translate(0, 13px);
+      transition: .2s transform linear;
+    }
+
+  }
+
+  .menu-trigger-active {
+    @include rotate(45deg);
+    border: none;
+    transition: .2s transform linear;
+
+    &::before {
+      @include transform(rotate(-90deg) translate(-13px, 0));
+      transition: .2s transform linear;
+    }
+  }
+  .mobile-list {
+    display: none;
+    width: 100%;
+    .mobile-item {
+      width: 100%;
+      @include padding-top-bottom(25px, 25px);
+    }
+  }
+
+  //Arrow Icon
+
+  i {
+    border: solid $black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+  }
+
+  i.down {
+    @include rotate(45deg);
+    margin-left: 5px;
+    margin-bottom: 3px;
+  }
+
+}
+
+.fixed-nav{
+  position:fixed;
+  top: 0;
+  width:100%;
+  z-index:1000;
+  animation: scrollDownMenu 1s ease;
+  padding-bottom: 20px;
+  .nav-container{
+    max-width: 1660px;
+  }
+}
+
+@keyframes scrollDownMenu{
+  from{
+    @include translate(0, -100px)
+  }
+  to{
+    @include translate(0, 0)
+  }
 }
