@@ -14,6 +14,13 @@ include('functions.php');
         <meta name="description" content="<?php echo $description; ?>">
         <meta name="<?php echo $author; ?>" content="SitePoint">
 
+        <meta property="og:url"                content="http://larsenjorgensen.com/dev/" />
+        <meta property="og:type"               content="website" />
+        <meta property="og:title"              content="Larsen+Jørgensen" />
+        <meta property="og:description"        content="We simplify the message." />
+        <meta property="og:image"              content="http://larsenjorgensen.com/dev/img/logo.jpg" />
+        <meta property="og:image:type"         content="image/jpg" />
+
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" href="fonts/fontface.css">
         <link rel="stylesheet" href="css/style.css">

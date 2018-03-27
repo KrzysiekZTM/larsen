@@ -15,7 +15,7 @@ $listIndex = array_keys($news);
 
     <section class="first-section whiteBG">
         <img class="centerObject" src="img/logo-light-grey.png" alt="larsen+Jorgensen Logo">
-        <h1 class="align-center"><?php echo $newsTitle; ?></h1>
+        <h2 class="align-center"><?php echo $newsTitle; ?></h2>
         <span class="subtitle align-center"><?php echo $newsDsc; ?></span>
         <img class="centerObject" src="img/downarrrow.svg" alt="larsen+Jorgensen Logo">
     </section>

@@ -34,50 +34,30 @@ h6{
 }
 
 h1, h2{
-	font-size: 2.5em;
-	@include marign-top-bottom(40px, 30px);
-	@media screen and (min-width: $bSmall){
-		font-size: 4em;
-	}
-	@media screen and (min-width: $bLarge){
-		font-size:5em;
-	}
-	@media screen and (min-width: $bXLarge){
-		font-size: 6em;
-	}
+  font-size: 6em;
+  margin-top: 55px;
 }
 
-//h2{
-//	@media screen and (min-width: $bMedium){
-//		margin-bottom: 30px;
-//	}
-//		@media screen and (min-width: $bLarge){
-//		margin-bottom: 90px;
-//	}
-//}
+h1{
+  margin-bottom: 30px;
+}
 
 h3{
-	font-size: 2.8em;
-	@media screen and (min-width: $bLarge){
-		font-size: 3em;
-	}
-	@media screen and (min-width: $bXLarge){
-		font-size: 4.5em;
-	}
+	font-size: 4.5em;
 }
 
 
 .logo{
 	@include font($logoFont, 700);
 	color:$black;
-	font-size: 18px;
+	font-size: 48px;
     transition: .4s all;
 	span{
 		color: $mediumGrey;
 	}
-  @media screen and (min-width: $bLarge){
-    font-size: 28px;
-  }
+	@media screen and (min-width: $bLarge) {
+		font-size: 28px;
+	}
 }
 
 .logo:hover{
@@ -95,7 +75,7 @@ h3{
 }
 
 .subtitle{
-	font-size: 1em;
+	font-size: 1.3em;
 	margin:0 auto;
 	display: block;
 	width: 90%;
@@ -106,12 +86,16 @@ h3{
 	@media screen and (min-width: $bLarge){
 		@include marign-top-bottom(0, 50px);
 		max-width: 700px;
-		font-size: 1.3em;
+		font-size: 1.44em;
 	}
 
 	@media screen and (min-width: $bXLarge){
 		@include marign-top-bottom(0, 100px);
 	}
+}
+
+.subtitle-dark{
+  color: $black;
 }
 
 .primary-text{

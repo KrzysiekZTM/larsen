@@ -78,7 +78,7 @@ $nav = array(
     array('Language','#'),
 );
 
-$footerEmail = "Give us a call <br>or send us an <a href=\"mailto:contact@larsenjorgensen.com\">email.</a>";
+$footerEmail = "Give us a call <br>or send us an <a style='text-decoration: underline;' href=\"mailto:contact@larsenjorgensen.com\">email.</a>";
 
 
 $newsTitle = "News<br><span class=\"header-thiner\">and</span> Notes";

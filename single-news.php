@@ -17,7 +17,7 @@ $id = $_GET['id'];
     <h1 class="align-center"><?php echo $news[$id]['title']; ?></h1>
     <span class="subtitle align-center"><?php echo $news[$id]['date']; ?></span>
 
-    <span style="margin-bottom:0" class="subtitle align-center"><?php echo $news[$id]['lead_text']; ?></span>
+    <span style="margin-bottom:0" class="subtitle align-center subtitle-dark"><?php echo $news[$id]['lead_text']; ?></span>
     
  </section>
 

@@ -29,33 +29,20 @@ h6 {
   line-height: 1.3; }
 
 h1, h2 {
-  font-size: 2.5em;
-  margin-top: 40px;
+  font-size: 6em;
+  margin-top: 55px; }
+
+h1 {
   margin-bottom: 30px; }
-  @media screen and (min-width: 768px) {
-    h1, h2 {
-      font-size: 4em; } }
-  @media screen and (min-width: 1200px) {
-    h1, h2 {
-      font-size: 5em; } }
-  @media screen and (min-width: 1444px) {
-    h1, h2 {
-      font-size: 6em; } }
 
 h3 {
-  font-size: 2.8em; }
-  @media screen and (min-width: 1200px) {
-    h3 {
-      font-size: 3em; } }
-  @media screen and (min-width: 1444px) {
-    h3 {
-      font-size: 4.5em; } }
+  font-size: 4.5em; }
 
 .logo {
   font-family: "Bona Nova";
   font-weight: 700;
   color: #000000;
-  font-size: 18px;
+  font-size: 48px;
   transition: .4s all; }
   .logo span {
     color: #898989; }
@@ -75,7 +62,7 @@ h3 {
   font-weight: 400; }
 
 .subtitle {
-  font-size: 1em;
+  font-size: 1.3em;
   margin: 0 auto;
   display: block;
   width: 90%;
@@ -90,11 +77,14 @@ h3 {
       margin-top: 0;
       margin-bottom: 50px;
       max-width: 700px;
-      font-size: 1.3em; } }
+      font-size: 1.44em; } }
   @media screen and (min-width: 1444px) {
     .subtitle {
       margin-top: 0;
       margin-bottom: 100px; } }
+
+.subtitle-dark {
+  color: #000000; }
 
 .primary-text {
   margin: 0 auto;
@@ -207,10 +197,10 @@ nav {
   nav ul li.active a {
     color: #898989; }
   nav .menu-trigger {
-    width: 30px;
-    height: 19px;
+    width: 50px;
+    height: 45px;
     border: 0;
-    border-top: 3px solid #222222;
+    border-top: 5px solid #222222;
     background: transparent;
     position: relative;
     transition: .2s transform linear; }
@@ -223,17 +213,17 @@ nav {
       top: 0;
       left: 0;
       width: 100%;
-      border-top: 3px solid black;
-      -webkit-transform: translate(0, 5px);
-      -moz-transform: translate(0, 5px);
-      -ms-transform: translate(0, 5px);
-      transform: translate(0, 5px);
+      border-top: 5px solid black;
+      -webkit-transform: translate(0, 10px);
+      -moz-transform: translate(0, 10px);
+      -ms-transform: translate(0, 10px);
+      transform: translate(0, 10px);
       transition: .2s transform linear; }
     nav .menu-trigger::after {
-      -webkit-transform: translate(0, 13px);
-      -moz-transform: translate(0, 13px);
-      -ms-transform: translate(0, 13px);
-      transform: translate(0, 13px);
+      -webkit-transform: translate(0, 25px);
+      -moz-transform: translate(0, 25px);
+      -ms-transform: translate(0, 25px);
+      transform: translate(0, 25px);
       transition: .2s transform linear; }
   nav .menu-trigger-active {
     -webkit-transform: rotate(45deg);
@@ -243,10 +233,10 @@ nav {
     border: none;
     transition: .2s transform linear; }
     nav .menu-trigger-active::before {
-      -webkit-transform: rotate(-90deg) translate(-13px, 0);
-      -moz-transform: rotate(-90deg) translate(-13px, 0);
-      -ms-transform: rotate(-90deg) translate(-13px, 0);
-      transform: rotate(-90deg) translate(-13px, 0);
+      -webkit-transform: rotate(-90deg) translate(-25px, 0);
+      -moz-transform: rotate(-90deg) translate(-25px, 0);
+      -ms-transform: rotate(-90deg) translate(-25px, 0);
+      transform: rotate(-90deg) translate(-25px, 0);
       transition: .2s transform linear; }
   nav .mobile-list {
     display: none;
@@ -291,12 +281,14 @@ nav {
 .fixed-nav {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
   animation: scrollDownMenu 1s ease;
   padding-bottom: 20px; }
   .fixed-nav .nav-container {
-    max-width: 1660px; }
+    max-width: 1660px;
+    margin: 0 auto; }
 
 @keyframes scrollDownMenu {
   from {
@@ -344,7 +336,7 @@ nav {
       .language-menu ul .language-item span {
         display: block; }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .row {
     margin-left: -15px;
     margin-right: -15px;
@@ -359,19 +351,19 @@ nav {
     justify-content: space-between;
     -ms-flex-pack: space-between; } }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .row-center {
     width: 110%;
     margin-left: -5%; } }
 
 .col {
   width: 100%; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 992px) {
     .col {
       width: 50%;
       padding: 15px; } }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .col-flex {
     display: -webkit-box;
     display: -moz-box;
@@ -389,7 +381,7 @@ nav {
     -ms-flex-pack: space-between; } }
 .col-flex .work {
   width: 100%; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 992px) {
     .col-flex .work {
       width: 110%; } }
 
@@ -397,7 +389,8 @@ nav {
   position: relative; }
   .work img {
     width: 100%;
-    object-fit: cover; }
+    object-fit: cover;
+    display: block; }
   .work a {
     color: #ffffff; }
 
@@ -513,24 +506,27 @@ footer {
     text-decoration: underline; }
 
 .contact-info-wrapper {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  justify-content: space-between;
-  -ms-flex-pack: space-between;
-  -webkit-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  display: block;
   width: 80%;
   margin: 0 auto;
   color: #898989;
   padding-bottom: 90px; }
+  @media screen and (min-width: 992px) {
+    .contact-info-wrapper {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: space-between;
+      -moz-justify-content: space-between;
+      -ms-justify-content: space-between;
+      justify-content: space-between;
+      -ms-flex-pack: space-between;
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; } }
   .contact-info-wrapper ul {
     font-size: 1.1em;
     line-height: 1.7em;

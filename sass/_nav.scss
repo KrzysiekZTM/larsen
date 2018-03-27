@@ -49,10 +49,10 @@ nav {
     @media screen and (min-width: $bMedium) {
       display: none !important;
     }
-    width: 30px;
-    height: 19px;
+    width: 50px;
+    height: 45px;
     border: 0;
-    border-top: 3px solid $darkGrey;
+    border-top: 5px solid $darkGrey;
     background: transparent;
     position: relative;
     transition: .2s transform linear;
@@ -63,13 +63,13 @@ nav {
       top: 0;
       left: 0;
       width: 100%;
-      border-top: 3px solid black;
-      @include translate(0, 5px);
+      border-top: 5px solid black;
+      @include translate(0, 10px);
       transition: .2s transform linear;
     }
 
     &::after {
-      @include translate(0, 13px);
+      @include translate(0, 25px);
       transition: .2s transform linear;
     }
 
@@ -81,7 +81,7 @@ nav {
     transition: .2s transform linear;
 
     &::before {
-      @include transform(rotate(-90deg) translate(-13px, 0));
+      @include transform(rotate(-90deg) translate(-25px, 0));
       transition: .2s transform linear;
     }
   }
@@ -124,12 +124,14 @@ nav {
 .fixed-nav{
   position:fixed;
   top: 0;
+  left:0;
   width:100%;
   z-index:1000;
   animation: scrollDownMenu 1s ease;
   padding-bottom: 20px;
   .nav-container{
     max-width: 1660px;
+    margin: 0 auto;
   }
 }
 

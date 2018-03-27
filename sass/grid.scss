@@ -1,5 +1,5 @@
 .row{
-	@media screen and (min-width: $bSmall){
+	@media screen and (min-width: $bMedium){
 		margin-left: -15px;
 		margin-right: -15px;
 		@include flexbox();
@@ -9,15 +9,9 @@
 }
 
 .row-center{
-	@media screen and (min-width: $bSmall){
+	@media screen and (min-width: $bMedium){
 		width: 110%;
 		margin-left: -5%;
-	}    
-	.col{
-		.work{
-			&:first-of-type{
-			}
-		}
 	}
 }
 
@@ -25,14 +19,14 @@
 
 .col{
 	width: 100%;
-	@media screen and (min-width: $bSmall){
+	@media screen and (min-width: $bMedium){
 		width: 50%;
 		padding: 15px;
 	}
 }
 
 .col-flex{
-		@media screen and (min-width: $bSmall){
+		@media screen and (min-width: $bMedium){
 		@include flexbox();
 		@include flex-direction(column);
 		@include justify-content(space-between);
@@ -40,7 +34,7 @@
 	
 	.work{
 		width: 100%;
-		@media screen and (min-width: $bSmall){
+		@media screen and (min-width: $bMedium){
 			width: 110%;
 		}
 	}
@@ -52,6 +46,7 @@
 	img{
 		width: 100%;
 		object-fit: cover;
+		display:block;
 	}
 	a{
 		color: $white;

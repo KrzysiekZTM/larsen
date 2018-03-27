@@ -138,9 +138,12 @@ footer{
 //Contact
 
 .contact-info-wrapper{
-	@include flexbox();
-	@include justify-content (space-between);
-	@include flex-wrap(wrap);
+	display: block;
+	@media screen and (min-width: $bMedium){
+		@include flexbox();
+		@include justify-content (space-between);
+		@include flex-wrap(wrap);
+	}
 	width: 80%;
 	margin: 0 auto;
 	color: $mediumGrey;
