@@ -15,3 +15,28 @@ function displayMobileLanguages($languagesArray){
     }
     return $languageHTML;
 }
+
+function SortAndDisplayJobOffers($array, $sortBy){
+    $sort = array();
+    $output = array();
+    $outputHTML = "";
+
+    foreach($array as $key => $value){
+        $sort[$key] = $value[$sortBy];
+    }
+    asort($sort);
+    $output = array_keys($sort);
+
+    foreach($output as $key => $value){
+        $outputHTML .= "<li>"; //List item
+        $outputHTML .= "<h5>";
+        $outputHTML .= $array[$value]['job'];
+        $outputHTML .= "</h5>";
+        $outputHTML .= "<p>";
+        $outputHTML .= $array[$value]['text'];
+        $outputHTML .= "</p>";
+        $outputHTML .= "</li>";
+    }
+
+    return $outputHTML;
+}

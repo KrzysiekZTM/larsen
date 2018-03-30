@@ -159,3 +159,41 @@ footer{
 		}
 	}
 }
+
+//career
+
+.jobs-list{
+	list-style: none;
+	padding: 0;
+	justify-content: space-between;
+	width: 95%;
+	max-width: 935px;
+	margin: 0 auto;
+	@media screen and (min-width: $bMedium){
+		display: flex;
+	}
+	li{
+		width:30%;
+		max-width: 220px;
+		display:block;
+		margin: 0 auto;
+		@media screen and (max-width: $bMedium){
+			&::after{
+				content: "";
+				display: block;
+				height: 2px;
+				width: 100%;
+				background-color: $lightGrey;
+			}
+		}
+		h5{
+			font-family: Muller;
+			font-size: 1em;
+			font-weight: 700;
+			margin-bottom: 0;
+		}
+		p{
+			margin-top: 0;
+		}
+	}
+}

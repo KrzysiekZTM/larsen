@@ -536,4 +536,34 @@ footer {
     .contact-info-wrapper ul li {
       display: block; }
 
+.jobs-list {
+  list-style: none;
+  padding: 0;
+  justify-content: space-between;
+  width: 95%;
+  max-width: 935px;
+  margin: 0 auto; }
+  @media screen and (min-width: 992px) {
+    .jobs-list {
+      display: flex; } }
+  .jobs-list li {
+    width: 30%;
+    max-width: 220px;
+    display: block;
+    margin: 0 auto; }
+    @media screen and (max-width: 992px) {
+      .jobs-list li::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: #f1f0f0; } }
+    .jobs-list li h5 {
+      font-family: Muller;
+      font-size: 1em;
+      font-weight: 700;
+      margin-bottom: 0; }
+    .jobs-list li p {
+      margin-top: 0; }
+
 /*# sourceMappingURL=style.css.map */

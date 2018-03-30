@@ -78,11 +78,41 @@ $nav = array(
     array('Language','#'),
 );
 
-$footerEmail = "Give us a call <br>or send us an <a style='text-decoration: underline;' href=\"mailto:contact@larsenjorgensen.com\">email.</a>";
+if(strtolower($page) == "career" || strtolower($page) == "case study"){
+    $footerEmail = "We’re also on <a style='text-decoration: underline;' href=\"#\">Facebook</a><br><a style='text-decoration: underline;' href=\"#\">Instagram</a> and <a href=\"#\" style='text-decoration: underline;'>Twitter</a>.";
+}else{
+    $footerEmail = "Give us a call <br>or send us an <a style='text-decoration: underline;' href=\"mailto:contact@larsenjorgensen.com\">email.</a>";
+}
+
 
 
 $newsTitle = "News<br><span class=\"header-thiner\">and</span> Notes";
 
 $newsDsc = "We believe that design should solve real problems, not just have a pretty surface. Read about our thoughts on design here.";
+
+
+//Career
+
+$career_text = array(
+    'title' => 'Careers',
+    'primary_text' => "We're always keen to see new illustrators work and keep great CVs on file. Please send any portfolios to, <a href='mailto:careers@larsenjorgensen.com'>careers@larsenjorgensen.com</a> including a brief description about yourself. We believe that great design helps brands grow",
+    'title2' => 'Recruitment',
+    'jobs_offers' => array(
+        array(
+            'job' => 'Interships',
+            'text' => 'Convince us with your talent. Contact our polish office.'
+        ),
+        array(
+            'job' => 'Back End Developer',
+            'text' => 'Convince us with your talent. Contact us. We\'re always keen to see new illustrators work.'
+        ),
+        array(
+            'job' => '3D Artist',
+            'text' => 'Convince us with your talent. Contact us. We\'re always keen to see new  illustrators work '
+        ),
+    ),
+);
+
+
 
 ?>
