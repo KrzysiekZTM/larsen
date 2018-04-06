@@ -1,62 +1,6 @@
-<?php 
-
-
-$languageShort = "en";
-$author = "Larsen+Jørgensen";
-$title = "Larsen+Jørgensen";
-$description = "Description";
-
-$projects = "See some of our latest projects below.";
-$studio = array(
-
-"We’re an independent design agency with studios in London, Łódź, Beiging, Trondheim and Dublin. We believe that great design helps brands grow, by abandoning the generic and relentlessly pursuing the unmistakable",
-
-"Approach",
-
-"In a world moving fast we strive to keep things simple. Making sense of complexity in brands and products. From promising startups to companies with decades of history, we create and position businesses from strategy and design, to developing a complete user experience. As every collaboration is unique, we shape our team and methods in new ways. Working closely with our clients for tighter execution and better communication. We travel light and move quick to help our clients push forward. Designing brands and products that speak to both heart and mind.",
-
-"Services"
-
-);
-
-$services = array(
-    array(
-        'Strategy',
-        'Brand Consulting',
-        'Art Direction',
-        'Branding',
-        'Web Design',
-        'Web Development'
-    ),
-    array(
-        'SEO',
-        'UX/UI',
-        'Event Branding',
-        'Logo, Identyty design',
-        'App design',
-        'Brand Consulting'
-    ),
-    array(
-        'Print Design',
-        'Social Media Consulting',
-        'Copywritting',
-        'Naming',
-        'Translating',
-        'Web Development'
-    )
-);
-
-$motto = "We simplify<br>the message.";
-
-$nav = array(
-    array('Work','index.php'),
-    array('Studio','studio.php'),
-    array('News','news.php'),
-    array('Contact','contact.php'),
-    array('Language','#'),
-);
-
-$footerEmail = "Give us a call <br>or send us an <a href=\"mailto:contact@larsenjorgensen.com\">email.";
+<?php
+include('inc/data.php');
+include('functions.php');
 
 ?>
 
@@ -69,6 +13,13 @@ $footerEmail = "Give us a call <br>or send us an <a href=\"mailto:contact@larsen
         <title><?php echo $title; ?></title>
         <meta name="description" content="<?php echo $description; ?>">
         <meta name="<?php echo $author; ?>" content="SitePoint">
+
+        <meta property="og:url"                content="http://larsenjorgensen.com/dev/" />
+        <meta property="og:type"               content="website" />
+        <meta property="og:title"              content="Larsen+Jørgensen" />
+        <meta property="og:description"        content="We simplify the message." />
+        <meta property="og:image"              content="http://larsenjorgensen.com/dev/img/logo.jpg" />
+        <meta property="og:image:type"         content="image/jpg" />
 
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" href="fonts/fontface.css">
@@ -83,4 +34,4 @@ $footerEmail = "Give us a call <br>or send us an <a href=\"mailto:contact@larsen
 
 
 <div class="wrapper">
-   <?php include 'nav.php'; ?>
+    <?php include 'nav.php'; ?>

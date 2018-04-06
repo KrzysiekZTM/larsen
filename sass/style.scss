@@ -1,10 +1,10 @@
 @import 'vars';
-@import 'flex';
 @import 'colours';
 @import 'mixins';
 @import 'typo';
 @import 'nav';
 @import 'work';
+@import 'grid';
 
 
 body{
@@ -17,6 +17,11 @@ body{
 	max-width: 1660px;
 	margin: 0 auto;
 	background-color: $white;
+  -webkit-transition: .4s all;
+  -moz-transition: .4s all;
+  -ms-transition: .4s all;
+  -o-transition: .4s all;
+  transition: .4s all;
 
 }
 
@@ -28,7 +33,7 @@ body{
 
 //Homepage sections
 
-.full-section{
+section{
 	@media screen and (min-width: $bXSmall){
 		@include padding-top-bottom(20px, 20px);
 
@@ -41,13 +46,7 @@ body{
 	}
 }
 
-.half-section{
-	@media screen and (min-width: $bSmall){
-		@include flexbox();
-		@include justify-content (flex-start);
-	}
 
-}
 
 
 .first-section{
@@ -63,71 +62,7 @@ body{
 		@include padding-top-bottom(80px, 80px);
 	}
 
-
-	@media screen and (min-width: $bXLarge){
-		@include padding-top-bottom(160px, 160px);
-	}
-
 }
-
-.duble-images-row{
-	@include flexbox();
-	@include justify-content (center);
-	@include flex-wrap(wrap);
-	@media screen and (min-width: $bLarge){
-		@include flex-wrap(nowrap);
-		img{
-
-			&:first-child{
-				margin-right: 28px;
-			}
-			&:last-child{
-				margin-left: 28px;
-			}
-		
-		}
-	
-	}
-
-	
-}
-
-// section:last-of-type{
-// 	@media screen and (min-width: $bXSmall){
-// 		@include padding-top-bottom(0, 20px);
-
-// 	}
-// 	@media screen and (min-width: $bSmall){
-// 		@include padding-top-bottom(0, 40px);
-// 	}
-// 	@media screen and (min-width: $bXLarge){
-// 		@include padding-top-bottom(0, 60px);
-// 	}
-// }
-
-
-//Flex support classes
-
-.flex{
-	@include flexbox();
-}
-
-.flex-wrap{
-	@include flex-wrap(wrap);
-}
-
-.flex-column{
-	@include flex-direction(column);
-}
-
-.flex-jc-sb{
-	@include justify-content (space-between);
-}
-
-.flex-vert-center{
-	@include justify-content (center);
-}
-
 
 //Responsive img
 .img-responsive{
@@ -142,10 +77,6 @@ body{
 
 
 //BG colour classses
-
-.whiteBG{
-	background-color: $white;
-}
 
 .darkBG{
 	background-color: $darkGrey;
@@ -164,6 +95,10 @@ footer{
 		a{
 			color: $white;
 			text-decoration: underline;
+			transition: 0.3s all;
+		}
+		a:hover{
+			color:$lightGrey;
 		}
 	}
 }
@@ -171,6 +106,7 @@ footer{
 .copy{
 
 	padding-top: 90px;
+	padding-bottom:70px;
 
 	background-color: $lightGrey;
 	font-size: .8em;
@@ -197,4 +133,84 @@ footer{
 		text-decoration: underline;
 	}
 
+}
+
+//Contact
+
+.contact-info-wrapper{
+	display: block;
+	@media screen and (min-width: $bMedium){
+		@include flexbox();
+		@include justify-content (space-between);
+		@include flex-wrap(wrap);
+	}
+	width: 80%;
+	margin: 0 auto;
+	color: $mediumGrey;
+	padding-bottom: 90px;
+	ul{
+		font-size: 1.1em;
+		line-height: 1.7em;
+		padding: 30px 0px;
+		display:block;
+		min-width: 325px;
+		li{
+			display:block;
+		}
+	}
+}
+
+//career
+
+.jobs-list{
+	list-style: none;
+	padding: 0;
+	justify-content: space-between;
+	width: 95%;
+	max-width: 935px;
+	margin: 0 auto;
+	@media screen and (min-width: $bMedium){
+		display: flex;
+	}
+	li{
+		width:30%;
+		max-width: 220px;
+		display:block;
+		margin: 0 auto;
+		@media screen and (max-width: $bMedium){
+			&::after{
+				content: "";
+				display: block;
+				height: 2px;
+				width: 100%;
+				background-color: $lightGrey;
+			}
+		}
+		h5{
+			font-family: Muller;
+			font-size: 1em;
+			font-weight: 700;
+			margin-bottom: 0;
+		}
+		p{
+			margin-top: 0;
+		}
+	}
+}
+
+//case
+
+.normal{
+	width: auto !important;
+	max-width:100%;
+	margin: 0 auto;
+	padding: 90px 0;
+	&:last-child{
+		padding-bottom:0;
+	}
+}
+
+.normal-smallP{
+	padding-top:0;
+	margin-top: -30px;
 }

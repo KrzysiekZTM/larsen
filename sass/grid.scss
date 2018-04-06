@@ -1,0 +1,75 @@
+.row{
+	@media screen and (min-width: $bMedium){
+		margin-left: -15px;
+		margin-right: -15px;
+		@include flexbox();
+		@include justify-content(space-between);
+	}
+
+}
+
+.row-center{
+	@media screen and (min-width: $bMedium){
+		width: 110%;
+		margin-left: -5%;
+	}
+}
+
+
+
+.col{
+	width: 100%;
+	@media screen and (min-width: $bMedium){
+		width: 50%;
+		padding: 15px;
+	}
+}
+
+.col-flex{
+		@media screen and (min-width: $bMedium){
+		@include flexbox();
+		@include flex-direction(column);
+		@include justify-content(space-between);
+	}
+	
+	.work{
+		width: 100%;
+		@media screen and (min-width: $bMedium){
+			width: 110%;
+		}
+	}
+
+}
+
+.work{
+	position: relative;
+	img{
+		width: 100%;
+		object-fit: cover;
+		display:block;
+	}
+	a{
+		color: $white;
+	}
+}
+
+.work-overlay{
+	//display:none;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left:0;
+	right:0;
+	bottom:0;
+	//width:100%;
+	//height:100%;
+	background-color: rgba(0,0,0,.67);
+	transition: all .3s linear;
+	color: $white;
+	h4{
+		color: $white;
+	}
+	div{
+		padding:87px;
+	}
+}

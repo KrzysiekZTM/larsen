@@ -17,8 +17,8 @@
 
 body{
 	@include font($textFont, 400);
-	font-size:18px;
-	line-height:1.3;
+	font-size: 18px;
+	line-height: 1.5;
 	color:$mediumGrey;
 }
 
@@ -30,69 +30,72 @@ h5,
 h6{
 	@include font($headingFont, 700);
 	color:$black;
+	line-height: 1.3;
 }
 
 h1, h2{
-	font-size: 2.5em;
-	@include marign-top-bottom(40px, 30px);
-	@media screen and (min-width: $bSmall){
-		font-size: 4em;
-	}
-	@media screen and (min-width: $bLarge){
-		font-size:5em;
-	}
-	@media screen and (min-width: $bXLarge){
-		font-size: 6em;
-	}
+  font-size: 6em;
+  margin-top: 55px;
 }
 
-h2{
-	@media screen and (min-width: $bMedium){
-		margin-bottom: 30px;
-	}
-		@media screen and (min-width: $bLarge){
-		margin-bottom: 90px;
-	}
+h1{
+  margin-bottom: 30px;
 }
 
 h3{
-	font-size: 2.8em;
-	@media screen and (min-width: $bLarge){
-		font-size: 3em;
-	}
-	@media screen and (min-width: $bXLarge){
-		font-size: 4.5em;
-	}
+	font-size: 4.5em;
 }
 
 
 .logo{
 	@include font($logoFont, 700);
 	color:$black;
-	font-size: 28px;
+	font-size: 48px;
+    transition: .4s all;
+	span{
+		color: $mediumGrey;
+	}
+	@media screen and (min-width: $bLarge) {
+		font-size: 28px;
+	}
 }
+
+.logo:hover{
+  color:$mediumGrey;
+}
+
 
 .logo-motto{
 	@include font($logoFont, 400);
 	color: $mediumGrey;
 }
 
+.header-thiner{
+	font-weight: 400;
+}
+
 .subtitle{
+	font-size: 1.3em;
 	margin:0 auto;
 	display: block;
+	width: 90%;
 	@include marign-top-bottom(0, 30px);
-		@media screen and (min-width: $bMedium){
+	@media screen and (min-width: $bMedium){
 		@include marign-top-bottom(0, 30px);
-		width: 70%;
 	}
-		@media screen and (min-width: $bLarge){
+	@media screen and (min-width: $bLarge){
 		@include marign-top-bottom(0, 50px);
-		width: 530px;
+		max-width: 700px;
+		font-size: 1.44em;
 	}
 
 	@media screen and (min-width: $bXLarge){
 		@include marign-top-bottom(0, 100px);
 	}
+}
+
+.subtitle-dark{
+  color: $black;
 }
 
 .primary-text{
@@ -103,7 +106,7 @@ h3{
 		width: 70%;
 	}
 	@media screen and(min-width: $bLarge){
-		width: 530px;
+		width: 625px;
 	}
 
 }
@@ -112,6 +115,11 @@ h3{
 a{
 	text-decoration: none;
 	color: $black;
+    transition: .4s all;
+}
+
+a:hover{
+  color: $mediumGrey;
 }
 
 .list-wrapper{
@@ -143,4 +151,20 @@ a{
 		}
 	}
 
+}
+
+.contact-info{
+	display: inline-block;
+	list-style:none;
+}
+
+.author{
+	&::before{
+		content: " ";
+		display: block;
+		width: 50px;
+		height: 2px;
+		background-color: $darkGrey;
+		margin-bottom: 50px;
+	}
 }
