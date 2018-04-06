@@ -197,3 +197,20 @@ footer{
 		}
 	}
 }
+
+//case
+
+.normal{
+	width: auto !important;
+	max-width:100%;
+	margin: 0 auto;
+	padding: 90px 0;
+	&:last-child{
+		padding-bottom:0;
+	}
+}
+
+.normal-smallP{
+	padding-top:0;
+	margin-top: -30px;
+}

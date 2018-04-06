@@ -9,7 +9,9 @@
 $case = array(
     array(
         'author' => 'Jens Larsen, Art Director & Partner',
+        'color' => '#b1a79e',
         'title' => "Updating the<Br>Hansoft brand.",
+        'short_dsc' => 'Formbar is a Norwegian glass studio producing handblown tableware, high-end interior products, and glass art.',
         'category' => array('Branding', 'Web Design'),
         'lead_text' => 'Formbar is a Norwegian glass studio producing handblown tableware, high-end interior products, and glass art. Pulling inspiration from the glass blowing process, Formbar’s logo reflects the organic form and imperfections of glass itself. ',
         'main_img' => 'case_studies_formbar_1.jpg',
@@ -17,5 +19,11 @@ $case = array(
         'img_half_1' => 'case_studies_formbar_3.png',
         'img_half_2' => 'case_studies_formbar_2.jpg',
         'description_2' => 'To sort out the naming confusion Hansoft decided to keep the name Hansoft for the company and to call the enterprise product Hansoft A3. This way the company Hansoft offered two products: Hansoft A3 and Favro. Following this decision we were approached to update both logotypes to clearly separate the two from each other.',
-    ),
+        'img_4' => 'case_studies_formbar_4.png',
+        'img_5' => 'case_studies_formbar_5.png',
+        'img_6' => 'case_studies_formbar_6.jpg',
+        'img_7' => 'case_studies_formbar_7.png',
+        'img_8' => 'case_studies_formbar_8.jpg',
+
+        ),
 );

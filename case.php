@@ -59,6 +59,18 @@ $id = $_GET['id'];
     </div>
 </section>
 
+
+<section class="work">
+    <img class="normal normal-smallP" src="img/case/<?php echo $case[$id]['img_4']; ?>" alt="">
+    <img class="normal" src="img/case/<?php echo $case[$id]['img_5']; ?>" alt="">
+    <img class="normal" src="img/case/<?php echo $case[$id]['img_6']; ?>" alt="">
+    <img class="normal normal-smallP" src="img/case/<?php echo $case[$id]['img_7']; ?>" alt="">
+    <img class="normal" src="img/case/<?php echo $case[$id]['img_8']; ?>" alt="">
+</section>
+
+
+
+
     <?php
 
     if(isset($case[$id]['description_2'])){
