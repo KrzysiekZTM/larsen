@@ -3,11 +3,8 @@
 $page = 'News';
 
 include("inc/defHeader.php") ;
-include('inc/news-db.php');
 
-$listIndex = array_keys($news);
-
-
+$articles = get_articles('news.data');
 ?>
 
 
@@ -32,55 +29,55 @@ $listIndex = array_keys($news);
             <div class="work">
                 <div class="work-overlay">
                      <div>
-                        <h4><a href="<?php echo "single-news.php?id=$listIndex[0]" ?>"><?php echo $news[0]['title'] ?></a></h4>
-                        <p><?php echo $news[0]['lead_text'] ?></p>    
+                        <h4><a href="single-news.php?id=<?php echo $articles[0]['id']?>"><?php echo $articles[0]['title'] ?></a></h4>
+                        <p><?php echo $articles[0]['lead_text'] ?></p>
                     </div> 
                 </div>
-                <img src="img/project-bg-3.jpg" alt="">
+                <img src="img/<?php echo $articles[0]['featured_img'] ?>" alt="">
             </div>
         </div>
         <div class="col">
              <div class="work">
                 <div class="work-overlay">
                      <div>
-                        <h4><a href="<?php echo "single-news.php?id=$listIndex[1]" ?>"><?php echo $news[1]['title'] ?></a></h4>
-                        <p><?php echo $news[1]['lead_text'] ?></p>    
+                        <h4><a href="single-news.php?id=<?php echo $articles[1]['id']?>"><?php echo $articles[1]['title'] ?></a></h4>
+                        <p><?php echo $articles[1]['lead_text'] ?></p>
                     </div> 
                 </div>
-                <img src="img/project-bg-3.jpg" alt="">
+                <img src="img/<?php echo $articles[1]['featured_img'] ?>" alt="">
             </div>
         </div>
     </div>
 	<div class="work">
         <div class="work-overlay">
                      <div>
-                        <h4><a href="<?php echo "single-news.php?id=$listIndex[2]" ?>"><?php echo $news[2]['title'] ?></a></h4>
-                        <p><?php echo $news[2]['lead_text'] ?></p>    
+                        <h4><a href="single-news.php?id=<?php echo $articles[2]['id']?>"><?php echo $articles[2]['title'] ?></a></h4>
+                        <p><?php echo $articles[2]['lead_text'] ?></p>
                     </div> 
                 </div>
-       <img src="img/project-bg-4.jpg" alt="">
+       <img src="img/<?php echo $articles[2]['featured_img'] ?>" alt="">
     </div>
     <div class="row row-center">
         <div class="col">
             <div class="work">
                 <div class="work-overlay">
                      <div>
-                        <h4><a href="<?php echo "single-news.php?id=$listIndex[3]" ?>"><?php echo $news[3]['title'] ?></a></h4>
-                        <p><?php echo $news[3]['lead_text'] ?></p>    
+                        <h4><a href="single-news.php?id=<?php echo $articles[3]['id']?>"><?php echo $articles[3]['title'] ?></a></h4>
+                        <p><?php echo $articles[3]['lead_text'] ?></p>
                     </div> 
                 </div>
-                <img src="img/project-bg-3.jpg" alt="">
+                <img src="img/<?php echo $articles[3]['featured_img'] ?>" alt="">
             </div>
         </div>
         <div class="col">
              <div class="work">
                 <div class="work-overlay">
                      <div>
-                        <h4><a href="<?php echo "single-news.php?id=$listIndex[4]" ?>"><?php echo $news[4]['title'] ?></a></h4>
-                        <p><?php echo $news[4]['lead_text'] ?></p>    
+                        <h4><a href="single-news.php?id=<?php echo $articles[4]['id']?>"><?php echo $articles[4]['title'] ?></a></h4>
+                        <p><?php echo $articles[4]['lead_text'] ?></p>
                     </div> 
                 </div>
-                <img src="img/project-bg-3.jpg" alt="">
+                <img src="img/<?php echo $articles[4]['featured_img'] ?>" alt="">
             </div>
         </div>
     </div>
@@ -89,22 +86,22 @@ $listIndex = array_keys($news);
             <div class="work">
                 <div class="work-overlay">
                      <div>
-                        <h4><a href="<?php echo "single-news.php?id=$listIndex[5]" ?>"></a><?php echo $news[5]['title'] ?></h4>
-                        <p><?php echo $news[5]['lead_text'] ?></p>    
+                        <h4><a href="single-news.php?id=<?php echo $articles[5]['id']?>"></a><?php echo $articles[5]['title'] ?></h4>
+                        <p><?php echo $articles[5]['lead_text'] ?></p>
                     </div> 
                 </div>
-                <img src="img/project-bg-3.jpg" alt="">
+                <img src="img/<?php echo $articles[5]['featured_img'] ?>" alt="">
             </div>
         </div>
         <div class="col">
              <div class="work">
                 <div class="work-overlay">
                      <div>
-                        <h4><a href="<?php echo "single-news.php?id=$listIndex[6]" ?>"></a><?php echo $news[6]['title'] ?></h4>
-                        <p><?php echo $news[6]['lead_text'] ?></p>    
+                        <h4><a href="single-news.php?id=<?php echo $articles[6]['id']?>"></a><?php echo $articles[6]['title'] ?></h4>
+                        <p><?php echo $articles[6]['lead_text'] ?></p>
                     </div> 
                 </div>
-                <img src="img/project-bg-3.jpg" alt="">
+                <img src="img/<?php echo $articles[6]['featured_img'] ?>" alt="">
             </div>
         </div>
     </div>

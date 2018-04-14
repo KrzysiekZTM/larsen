@@ -10,62 +10,54 @@
 $page = 'Case Study';
 
 include("inc/defHeader.php") ;
-include('inc/case-db.php');
 
-$id = $_GET['id'];
+$id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
-
-
+$case = get_single_work($id);
 ?>
 
 
 <section style="padding-bottom: 0;" class="first-section whiteBG">
     <img class="centerObject" src="img/logo-light-grey.png" alt="larsen+Jorgensen Logo">
-    <h1 class="align-center"><?php echo $case[$id]['title']; ?></h1>
+    <h1 class="align-center"><?php echo $case['title']; ?></h1>
     <span class="subtitle align-center">
+        <?php echo implode(", ", $case['categories']) ?>
+    </span>
 
-    <?php
-        if(count($case[$id]['category'])){
-            foreach($case[$id]['category'] as $category){
-                echo $category . ", ";
-            }
-        }
-    ?></span>
-
-    <span class="subtitle align-center subtitle-dark"><?php echo $case[$id]['lead_text']; ?></span>
+    <span class="subtitle align-center subtitle-dark"><?php echo $case['lead_text']; ?></span>
     <img class="centerObject" src="img/downarrrow.svg" alt="larsen+Jorgensen Logo">
 
  </section>
 
 <section class="work">
-    <img src="img/case/<?php echo $case[$id]['main_img']; ?>" alt="">
+    <img src="img/uploads/<?php echo $case['main_img']; ?>" alt="">
 </section>
 
 
 <section>
-    <p class="primary-text align-left"><?php echo $case[$id]['description_1'];?></p>
+    <p class="primary-text align-left"><?php echo $case['description_1'];?></p>
 </section>
 
 <section class="row row-center">
     <div class="col">
         <div class="work">
-            <img src="img/case/<?php echo $case[$id]['img_half_1']; ?>" alt="">
+            <img src="img/uploads<?php echo $case['img_half_1']; ?>" alt="">
         </div>
     </div>
     <div class="col">
         <div class="work">
-            <img src="img/case/<?php echo $case[$id]['img_half_2']; ?>" alt="">
+            <img src="img/uploads<?php echo $case['img_half_2']; ?>" alt="">
         </div>
     </div>
 </section>
 
 
 <section class="work">
-    <img class="normal normal-smallP" src="img/case/<?php echo $case[$id]['img_4']; ?>" alt="">
-    <img class="normal" src="img/case/<?php echo $case[$id]['img_5']; ?>" alt="">
-    <img class="normal" src="img/case/<?php echo $case[$id]['img_6']; ?>" alt="">
-    <img class="normal normal-smallP" src="img/case/<?php echo $case[$id]['img_7']; ?>" alt="">
-    <img class="normal" src="img/case/<?php echo $case[$id]['img_8']; ?>" alt="">
+    <img class="normal normal-smallP" src="img/uploads/<?php echo $case['img_4']; ?>" alt="">
+    <img class="normal" src="img/uploads/<?php echo $case['img_5']; ?>" alt="">
+    <img class="normal" src="img/uploads/<?php echo $case['img_6']; ?>" alt="">
+    <img class="normal normal-smallP" src="img/uploads/<?php echo $case['img_7']; ?>" alt="">
+    <img class="normal" src="img/uploads/<?php echo $case['img_8']; ?>" alt="">
 </section>
 
 
@@ -73,20 +65,20 @@ $id = $_GET['id'];
 
     <?php
 
-    if(isset($case[$id]['description_2'])){
+    if(isset($case['description_2'])){
 
     ?>
 
     <section style="padding-top:120px; padding-bottom: 0;" class="whiteBG">
 
-        <p class="primary-text align-left"><?php echo $case[$id]['description_2'] ?></p>
+        <p class="primary-text align-left"><?php echo $case['description_2'] ?></p>
 
     </section>
 
 <?php } ?>
 
 <section class="row" style="padding-top:50px;">
-    <p style="color:#222222; margin-top:0;" class="primary-text align-left author"><?php echo $case[$id]['author'] ?></p>
+    <p style="color:#222222; margin-top:0;" class="primary-text align-left author"><?php echo $case['first_name']." ".$case['last_name'].", ".$case['position'] ?></p>
 </section>
 
 <?php include 'inc/defFooter.php' ?>

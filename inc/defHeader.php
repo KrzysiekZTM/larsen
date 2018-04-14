@@ -26,7 +26,6 @@ include('functions.php');
         <link rel="stylesheet" href="css/style.css">
 
         <!--[if lt IE 9]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
         <![endif]-->
     </head>
 
