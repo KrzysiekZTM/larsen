@@ -1,21 +1,29 @@
 <?php
 session_start();
+include ("../inc/functions.php");
 
-if(isset($_SESSION['login']) && $_SESSION['login'] === true){
+
+
+if(isset($_SESSION['id'])){
     header("location: addNews.php");
     exit();
 }
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING );
-    $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING );
+    $user = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING );
+    $pass = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING );
 
-    if(empty($username) || empty($password)){
+
+    if(empty($user) || empty($pass)){
         $error_message = "Please fill in username and password";
     }else{
-        $check = check_if_user($username, $password);
-        if($check){
-            $_SESSION['login'] = true;
+        $login = larsen_login($user, $pass);
+        var_dump($login);
+        if($login){
+            $_SESSION['id'] = $login['id'];
+            header("location: addNews.php");
+        }else {
+            $error_message = "Wrong username or password";
         }
     }
 }
@@ -56,13 +64,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             <form method="post" action="login.php">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input class="form-control" type="text" name="username" id="username" />
+                    <input class="form-control" type="text" name="username" id="username" placeholder="Your login" />
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input class="form-control" type="password" name="password" id="password">
+                    <input class="form-control" type="password" name="password" id="password" placeholder="Your password">
                 </div>
-                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Zaloguj">
+                <div class="form-gorup">
+                    <input class="btn btn-primary btn-lg btn-block" type="submit" value="Zaloguj">
+                </div>
             </form>
         </div>
     </div>

@@ -1,5 +1,27 @@
-<?php
+ <?php
 
+function larsen_login($user, $pass)
+{
+    include ('connection.php');
+
+    try {
+        $query = $db->prepare("
+            SELECT users.id, users.username, users.password, user_role.name
+            FROM users 
+            JOIN users_role_bridge ON users.id = users_role_bridge.user_id
+            JOIN user_role ON users_role_bridge.role_id = user_role.id
+            WHERE users.username = :username
+            AND users.password = :password
+        ");
+        $query->bindValue(':username', $user, PDO::PARAM_STR);
+        $query->bindValue(':password', $pass, PDO::PARAM_STR);
+        $query->execute();
+        $output = $query->fetch(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+        echo "Error occured: " . $e->getMessage();
+    };
+    return $output;
+}
 
 function get_works(){
     include ('connection.php');
@@ -132,6 +154,20 @@ function get_articles($orderby)
     return $articles;
 }
 
+
+function get_job_offers(){
+    include ("connection.php");
+
+    try{
+        $query = $db->prepare('SELECT * FROM career ORDER BY id');
+        $query->execute();
+        $output = $query->fectchALl(PDO::FETCH_ASSOC);
+    }catch(Exception $e){
+        echo "Error: " . $e->getMessage();
+    }
+    return $output;
+}
+
 function displayLanguages($languagesArray)
 {
     $languageHTML ="";
@@ -147,31 +183,5 @@ function displayMobileLanguages($languagesArray){
         $languageHTML .= "<img src='img/flags/".$language['img']."-mobile.png'></img>";
     }
     return $languageHTML;
-}
-
-function SortAndDisplayJobOffers($array, $sortBy)
-{
-    $sort = array();
-    $output = array();
-    $outputHTML = "";
-
-    foreach($array as $key => $value){
-        $sort[$key] = $value[$sortBy];
-    }
-    asort($sort);
-    $output = array_keys($sort);
-
-    foreach($output as $key => $value){
-        $outputHTML .= "<li>"; //List item
-        $outputHTML .= "<h5>";
-        $outputHTML .= $array[$value]['job'];
-        $outputHTML .= "</h5>";
-        $outputHTML .= "<p>";
-        $outputHTML .= $array[$value]['text'];
-        $outputHTML .= "</p>";
-        $outputHTML .= "</li>";
-    }
-
-    return $outputHTML;
 }
 
