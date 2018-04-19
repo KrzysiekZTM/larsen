@@ -3,7 +3,7 @@
         <img class="centerObject" src="img/logo-white.png" alt="larsen+Jorgensen Logo">
     </footer>
     <div class="copy">
-        <p>© <?php echo date('Y'); ?> Larsen+Jørgensen. All rights reserved. Cookie policy. <span><a href="#">Careers</a></span></p>
+        <p>© <?php echo date('Y'); ?> Larsen+Jørgensen. All rights reserved. Cookie policy. <span><a href="career.php">Careers</a></span></p>
         <ul>
             <li><a href="">Facebook</a></li>
             <li><a href="">Instagram</a></li>

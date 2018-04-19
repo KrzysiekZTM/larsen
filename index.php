@@ -4,9 +4,8 @@ $page = 'Work';
 
 
 include "inc/defHeader.php";
-include "inc/case-db.php";
+$case = get_works();
 
-$caseIndex = array_keys($case);
 ?>
 
     <!-- 1st section -->
@@ -30,53 +29,53 @@ $caseIndex = array_keys($case);
                 <div class="work">
                     <div class="work-overlay">
                          <div>
-                             <h4><a href="<?php echo "case.php?id=$caseIndex[0]" ?>"><?php echo $case[0]['title']; ?></a></h4>
+                             <h4><a href="<?php echo "case.php?id=".$case[0]['id'] ?>"><?php echo $case[0]['title']; ?></a></h4>
                             <p><?php echo $case[0]['short_dsc']; ?></p>
                         </div> 
                     </div>
-                    <img src="img/project-bg-1.jpg" alt="">
+                    <img src="img/uploads/<?php echo $case[0]['main_img_vert'] ?>" alt="">
                 </div>
             </div>
             <div class="col col-flex">
                  <div class="work">
                     <div class="work-overlay">
                          <div>
-                             <h4><a href="<?php echo "case.php?id=$caseIndex[1]" ?>"><?php echo $case[1]['title']; ?></a></h4>
+                             <h4><a href="<?php echo "case.php?id=".$case[1]['id'] ?>"><?php echo $case[1]['title']; ?></a></h4>
                             <p><?php echo $case[1]['short_dsc']; ?></p>
                         </div> 
                     </div>
-                    <img src="img/project-bg-3.jpg" alt="">
+                    <img src="img/uploads/<?php echo $case[1]['main_img'] ?>" alt="">
                 </div>
                 <div class="work">
                     <div class="work-overlay">
                         <div>
-                            <h4><a href="<?php echo "case.php?id=$caseIndex[2]" ?>"><?php echo $case[2]['title']; ?></a></h4>
+                            <h4><a href="<?php echo "case.php?id=".$case[2]['id'] ?>"><?php echo $case[2]['title']; ?></a></h4>
                             <p><?php echo $case[2]['short_dsc']; ?></p>
                         </div> 
                     </div>
-                    <img src="img/project-bg-3.jpg" alt="">
+                    <img src="img/uploads/<?php echo $case[2]['main_img'] ?>" alt="">
                 </div>
             </div>
         </div>
         <div class="work">
             <div class="work-overlay">
                 <div>
-                    <h4><a href="<?php echo "case.php?id=$caseIndex[3]" ?>"><?php echo $case[3]['title']; ?></a></h4>
+                    <h4><a href="<?php echo "case.php?id=".$case[3]['id'] ?>"><?php echo $case[3]['title']; ?></a></h4>
                     <p><?php echo $case[3]['short_dsc']; ?></p>
                 </div>
             </div>
-            <img src="img/project-bg-4.jpg" alt="">
+            <img src="img/uploads/<?php echo $case[3]['main_img'] ?>" alt="">
         </div>
         <div class="row">
             <div class="col">
                 <div class="work">
                     <div class="work-overlay">
                         <div>
-                            <h4><a href="<?php echo "case.php?id=$caseIndex[4]" ?>"><?php echo $case[4]['title']; ?></a></h4>
+                            <h4><a href="<?php echo "case.php?id=".$case[4]['id'] ?>"><?php echo $case[4]['title']; ?></a></h4>
                             <p><?php echo $case[4]['short_dsc']; ?></p>
                         </div> 
                     </div>
-                    <img src="img/project-bg-1.jpg" alt="">
+                    <img src="img/uploads/<?php echo $case[4]['main_img_vert'] ?>" alt="">
                 </div>
             </div>
             <div class="col-gap"></div>
@@ -84,20 +83,20 @@ $caseIndex = array_keys($case);
                  <div class="work">
                     <div class="work-overlay">
                          <div>
-                             <h4><a href="<?php echo "case.php?id=$caseIndex[5]" ?>"><?php echo $case[5]['title']; ?></a></h4>
+                             <h4><a href="<?php echo "case.php?id=".$case[5]['id'] ?>"><?php echo $case[5]['title']; ?></a></h4>
                             <p><?php echo $case[5]['short_dsc']; ?></p>
                         </div> 
                     </div>
-                    <img src="img/project-bg-3.jpg" alt="">
+                    <img src="img/uploads/<?php echo $case[5]['main_img'] ?>" alt="">
                 </div>
                 <div class="work">
                     <div class="work-overlay">
                          <div>
-                             <h4><a href="<?php echo "case.php?id=$caseIndex[6]" ?>"><?php echo $case[6]['title']; ?></a></h4>
+                             <h4><a href="<?php echo "case.php?id=".$case[6]['id'] ?>"><?php echo $case[6]['title']; ?></a></h4>
                             <p><?php echo $case[6]['short_dsc']; ?></p>
                         </div> 
                     </div>
-                    <img src="img/project-bg-3.jpg" alt="">
+                    <img src="img/uploads/<?php echo $case[6]['main_img'] ?>" alt="">
                 </div>
             </div>
         </div>

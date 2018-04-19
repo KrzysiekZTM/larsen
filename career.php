@@ -8,7 +8,9 @@
 
 $page = 'Career';
 
-include "inc/defHeader.php"
+include "inc/defHeader.php";
+
+$jobs = get_job_offers();
 
 ?>
 
@@ -35,7 +37,11 @@ include "inc/defHeader.php"
     <div class="jobs-list-wrapper">
 
         <ul class="jobs-list">
-            <?php echo SortAndDisplayJobOffers($career_text['jobs_offers'], 'job') ?>
+            <?php
+                foreach($jobs as $job){
+                    echo "<li><h5>".$job['name']."</h5><p>".$job['job_description']."</p></li>";
+                }
+            ?>
         </ul>
 
     </div>

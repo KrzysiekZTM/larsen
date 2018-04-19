@@ -3,8 +3,11 @@
 $page = 'Contact';
 
 include "inc/defHeader.php";
-include "inc/contact-info.php" ?>
+include "inc/contact-info.php"
 
+$contact_infos = get_contact_infos();
+
+?>
 <!-- 1st section -->
 
 
