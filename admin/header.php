@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['id'])){
-    header('location: login.php');
+    header('location: index.php');
 }
 
 include("../inc/functions.php");
@@ -40,8 +40,7 @@ include("../inc/functions.php");
                     <a class="nav-item nav-link" href="addNews.php">News</a>
                     <a class="nav-item nav-link disabled" href="#">Authors</a>
                     <a class="nav-item nav-link disabled" href="#">Works</a>
-                    <a class="nav-item nav-link disabled" href="#">Job Offers</a>
-                    <a class="nav-item nav-link disabled" href="#">Add Job Offer</a>
+                    <a class="nav-item nav-link" href="jobs.php">Jobs</a>
                     <a class="nav-item nav-link disabled" href="#">Contact Info</a>
                     <button class="btn btn-outline-success" type="button">View Page</button>
                 </div>

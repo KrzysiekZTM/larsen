@@ -61,7 +61,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 echo "<div class=\"alert alert-danger\" role=\"alert\">".$error_message."</div>";
             }
             ?>
-            <form method="post" action="login.php">
+            <form method="post" action="">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input class="form-control" type="text" name="username" id="username" placeholder="Your login" />

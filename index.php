@@ -6,8 +6,6 @@ $page = 'Work';
 include "inc/defHeader.php";
 $case = get_works();
 
-var_dump($case);
-
 ?>
 
     <!-- 1st section -->

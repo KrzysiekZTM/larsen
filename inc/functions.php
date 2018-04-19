@@ -10,11 +10,11 @@ function larsen_login($user, $pass)
             FROM users 
             JOIN users_role_bridge ON users.id = users_role_bridge.user_id
             JOIN user_role ON users_role_bridge.role_id = user_role.id
-            WHERE users.username = :username
-            AND users.password = :password
+            WHERE users.username = :user
+            AND users.password = :pass
         ");
-        $query->bindValue(':username', $user, PDO::PARAM_STR);
-        $query->bindValue(':password', $pass, PDO::PARAM_STR);
+        $query->bindValue(':user', $user, PDO::PARAM_STR);
+        $query->bindValue(':pass', $pass, PDO::PARAM_STR);
         $query->execute();
         $output = $query->fetch(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
@@ -161,10 +161,40 @@ function get_job_offers(){
     try{
         $query = $db->prepare('SELECT * FROM career ORDER BY id');
         $query->execute();
-        $output = $query->fectchALl(PDO::FETCH_ASSOC);
+        $output = $query->fetchAll(PDO::FETCH_ASSOC);
     }catch(Exception $e){
         echo "Error: " . $e->getMessage();
     }
+    return $output;
+}
+
+function add_job_offer($job_name, $job_description){
+    include ("connection.php");
+
+    try{
+        $query = $db->prepare('INSERT INTO career VALUES (NULL, ?, ?)');
+        $query->bindParam(1, $job_name, PDO::PARAM_STR);
+        $query->bindParam(2, $job_description, PDO::PARAM_STR);
+        $query->execute();
+        $output = true;
+    }catch (Exception $e){
+        echo "Error: " . $e->getMessage();
+        $output = false;
+    }
+    return $output;
+}
+
+function get_contact_infos(){
+    include ("connection.php");
+
+    try{
+        $query = $db->prepare('');
+        $query -> execute();
+        $output = $query -> fetchAll(PDO::FETCH_ASSOC);
+    }catch (Exception $e){
+        echo "Error: " . $e->getMessage();
+    }
+
     return $output;
 }
 

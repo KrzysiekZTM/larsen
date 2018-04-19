@@ -8,10 +8,10 @@
 try {
     $host = "localhost";
     $database = "larsen_db";
-    $username = "root";
-    $password = "";
+    $db_username = "root";
+    $db_password = "";
     $dsn = 'mysql:host=' . $host . ';dbname=' . $database;
-    $db = new PDO($dsn, $username, $password);
+    $db = new PDO($dsn, $db_username, $db_password);
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }catch(Exception $e){
