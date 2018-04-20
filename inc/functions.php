@@ -144,7 +144,7 @@ function get_articles($orderby)
 {
     include('connection.php');
     try {
-        $query = $db->prepare('SELECT news.id, news.title, news.lead_text, news.featured_img FROM news WHERE publish_date <= CURDATE() ORDER BY ? DESC');
+        $query = $db->prepare('SELECT news.id, news.title, news.lead_text, news.publish_date, news.featured_img FROM news WHERE publish_date <= CURDATE() ORDER BY ? DESC');
         $query->bindParam(1, $orderby, PDO::PARAM_STR);
         $query->execute();
         $articles = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -188,7 +188,11 @@ function get_contact_infos(){
     include ("connection.php");
 
     try{
-        $query = $db->prepare('');
+        $query = $db->prepare('
+          SELECT country, email, number 
+          FROM contact_info
+          LEFT JOIN contact_email ON contact_info.email_id = contact_email.id
+          LEFT JOIN contact_phones ON contact_info.phone_id = contact_phones.id');
         $query -> execute();
         $output = $query -> fetchAll(PDO::FETCH_ASSOC);
     }catch (Exception $e){
@@ -197,6 +201,46 @@ function get_contact_infos(){
 
     return $output;
 }
+
+function get_all_emails(){
+    include ('connection.php');
+    try{
+        $query = $db->prepare('SELECT * FROM contact_email');
+        $query -> execute();
+        $output = $query->fetchAll(PDO::FETCH_ASSOC);
+    }catch(Exception $e){
+        echo "Error: " . $e -> getMessage();
+    }
+
+    return $output;
+}
+
+function get_all_phones(){
+    include ('connection.php');
+    try{
+        $query = $db->prepare('SELECT * FROM contact_phones');
+        $query -> execute();
+        $output = $query->fetchAll(PDO::FETCH_ASSOC);
+    }catch(Exception $e){
+        echo "Error: " . $e -> getMessage();
+    }
+
+    return $output;
+}
+
+function add_contact_info($country, $email_id, $number_id){
+    include ('connection.php');
+    try{
+        $query = $db->prepare('INSERT INTO contact_info VALUES (NULL, ?, ?, ?)');
+        $query -> bindParam(1, $country, PDO::PARAM_STR);
+        $query -> bindParam(2, $email_id, PDO::PARAM_INT);
+        $query -> bindParam(3, $number_id, PDO::PARAM_INT);
+    }catch(Exception $e){
+        echo "Error: " . $e->getMessage();
+    }
+}
+
+
 
 function displayLanguages($languagesArray)
 {

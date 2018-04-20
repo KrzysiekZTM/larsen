@@ -393,6 +393,9 @@ nav {
     display: block; }
   .work a {
     color: #ffffff; }
+  @media screen and (max-width: 992px) {
+    .work {
+      margin-bottom: 30px; } }
 
 .work-overlay {
   opacity: 0;

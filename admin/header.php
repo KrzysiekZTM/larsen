@@ -41,7 +41,7 @@ include("../inc/functions.php");
                     <a class="nav-item nav-link disabled" href="#">Authors</a>
                     <a class="nav-item nav-link disabled" href="#">Works</a>
                     <a class="nav-item nav-link" href="jobs.php">Jobs</a>
-                    <a class="nav-item nav-link disabled" href="#">Contact Info</a>
+                    <a class="nav-item nav-link" href="contact_info.php">Contact Info</a>
                     <button class="btn btn-outline-success" type="button">View Page</button>
                 </div>
             </div>

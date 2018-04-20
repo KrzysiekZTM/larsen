@@ -3,9 +3,9 @@
 $page = 'Contact';
 
 include "inc/defHeader.php";
-include "inc/contact-info.php"
+include "inc/contact-info.php";
 
-$contact_infos = get_contact_infos();
+$contactInfo = get_contact_infos();
 
 ?>
 <!-- 1st section -->
@@ -27,9 +27,11 @@ $contact_infos = get_contact_infos();
 		<?php 
 
 			foreach($contactInfo as $contactItem){
-				echo "<ul class=\"contact-info\">";
-				echo $contactItem;
-				echo "</ul>";
+				echo "<ul class=\"contact-info\">"; ?>
+                <?php echo "<li>".$contactItem['country']; ?>
+                <?php echo "<li><a href=\"mailto:poland@larsenjorgensen.com\">".$contactItem['email']."</a></li>"; ?>
+                <?php echo "<li>".$contactItem['number']."</li>" ?>
+				<?php echo "</ul>";
 			}
 
 		?>
